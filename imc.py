@@ -1,43 +1,6 @@
-# Define function to calculate IMC
-def imc(peso, altura):
-    imc = peso / (altura*altura)
-    return(imc)
+import functions as f
 
-# Define function to classification IMC.
-def classifica(sexo, peso, altura):
-    valor_imc = imc(peso, altura)
-
-    # Do the calculation if male.
-    if sexo == 'm':
-        if valor_imc < 20.7:
-            return "Abaixo do peso."
-        elif valor_imc >= 20.7 and valor_imc < 26.4:
-            return "Peso normal."
-        elif valor_imc >= 26.4 and valor_imc < 27.8:
-            return "Marginalmente acima do peso."
-        elif valor_imc >= 27.8 and valor_imc < 31.1:
-            return "Acima do peso ideal."
-        elif valor_imc >= 31.1:
-            return "Obesidade."
-        else:
-            return "Erro de calculo."
-
-    # Do the calculation if female
-    if sexo == 'f':
-        if valor_imc < 19.1:
-            return "Abaixo do peso."
-        elif valor_imc >= 19.1 and valor_imc < 25.8:
-            return "Peso normal."
-        elif valor_imc >= 25.8 and valor_imc < 27.3:
-            return "Marginalmente acima do peso."
-        elif valor_imc >= 27.3 and valor_imc < 32.3:
-            return "Acima do peso ideal."
-        elif valor_imc >= 32.3:
-            return "Obesidade."
-        else:
-            return "Erro de calculo."
-
-# Start interation with the user
+# Start interaction with the user
 print('Vamos calcular seu IMC?')
 
 # Validation sexo
@@ -79,9 +42,9 @@ while valid_altura == False:
 print('\n')
 
 # Call the function imc, passing 2 variables and insert the result in variable v_imc converting the result in string
-v_imc = str(imc(peso, altura))
+v_imc = str(f.imc(peso, altura))
 # Call the function classifica, passing 3 variables and insert the result in variable v_class
-v_class = classifica(sexo, peso, altura)
+v_class = f.classifica(sexo, peso, altura)
 
 # Print the results
 print('O seu IMC é:', v_imc[0:5])
